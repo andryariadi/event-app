@@ -14,7 +14,7 @@ export default function Header() {
             <Image src="/assets/images/evently.svg" alt="Evently" width={128} height={38} />
           </Link>
           <SignedIn>
-            <nav className="hidden md:flex-between w-full max-w-xs bg-red-700">
+            <nav className="hidden md:flex-between w-full max-w-xs">
               <NavItems />
             </nav>
           </SignedIn>
