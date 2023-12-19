@@ -1,5 +1,8 @@
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+
 import Image from "next/image";
+import { Separator } from "../ui/separator";
+import NavItems from "./NavItems";
 
 export default function MobileNav() {
   return (
@@ -11,6 +14,8 @@ export default function MobileNav() {
           </SheetTrigger>
           <SheetContent className="flex flex-col gap-6 bg-white md:hidden">
             <Image src="/assets/images/evently.svg" alt="logo" width={128} height={38} />
+            <Separator className="border border-rose-100" />
+            <NavItems />
           </SheetContent>
         </Sheet>
       </nav>

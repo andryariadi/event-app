@@ -1,7 +1,7 @@
 export default function NavItems() {
   return (
     <>
-      <h1>NavItems Component</h1>
+      <ul className="flex md:flex-between"></ul>
     </>
   );
 }
