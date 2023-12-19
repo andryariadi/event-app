@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import NavItems from "./NavItems";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (
@@ -20,7 +21,7 @@ export default function Header() {
           <div className="flex w-32 justify-end gap-3">
             <SignedIn>
               <UserButton afterSignOutUrl="/" />
-              <NavItems />
+              <MobileNav />
             </SignedIn>
             <SignedOut>
               <Button asChild className="rounded-full" size="lg">
