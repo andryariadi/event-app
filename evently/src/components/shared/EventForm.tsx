@@ -8,6 +8,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input";
 import { eventFormSchema } from "@/lib/validator";
 import { eventDefaultValues } from "@/constant";
+import Dropdown from "./Dropdown";
 
 type EventFormProps = {
   userId: string;
@@ -51,7 +52,7 @@ export default function EventForm({ userId, type }: EventFormProps) {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl>
-                    <Input placeholder="Event categoryId" {...field} className="input-field" />
+                    <Dropdown onChangeHandler={field.onChange} value={field.value} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
