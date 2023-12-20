@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input";
 import { eventFormSchema } from "@/lib/validator";
 import { eventDefaultValues } from "@/constant";
 import Dropdown from "./Dropdown";
+import { Textarea } from "@/components/ui/textarea";
+import FileUploader from "./FileUploader";
 
 type EventFormProps = {
   userId: string;
@@ -53,6 +55,32 @@ export default function EventForm({ userId, type }: EventFormProps) {
                 <FormItem className="w-full">
                   <FormControl>
                     <Dropdown onChangeHandler={field.onChange} value={field.value} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="flex flex-col md:flex-row gap-5">
+            <FormField
+              control={form.control}
+              name="description"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormControl className="h-64">
+                    <Textarea placeholder="Description" {...field} className="textarea rounded-2xl" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="imageUrl"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormControl className="h-64">
+                    <FileUploader />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
