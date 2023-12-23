@@ -16,22 +16,22 @@ export default function Dropdown({ value, onChangeHandler }: DropdownProps) {
   const [newCategory, setNewCategory] = useState("");
 
   const handlerAddCategory = () => {
-    createCategory({
-      categoryName: newCategory.trim(),
-    }).then((category) => {
-      setCategories((prevState) => [...prevState, category]);
-    });
+    // createCategory({
+    //   categoryName: newCategory.trim(),
+    // }).then((category) => {
+    //   setCategories((prevState) => [...prevState, category]);
+    // });
   };
 
-  useEffect(() => {
-    const getCategories = async () => {
-      const categoryList = await getAllCategories();
+  // useEffect(() => {
+  //   const getCategories = async () => {
+  //     const categoryList = await getAllCategories();
 
-      categoryList && setCategories(categoryList as ICategory[]);
-    };
+  //     categoryList && setCategories(categoryList as ICategory[]);
+  //   };
 
-    getCategories();
-  }, []);
+  //   getCategories();
+  // }, []);
 
   return (
     <>
@@ -46,6 +46,7 @@ export default function Dropdown({ value, onChangeHandler }: DropdownProps) {
                 {category.name}
               </SelectItem>
             ))}
+
           <AlertDialog>
             <AlertDialogTrigger className="p-medium-14 flex w-full rounded-sm py-3 pl-8 text-primary-500 hover:bg-primary-50 focus:text-primary-500">Add new category</AlertDialogTrigger>
             <AlertDialogContent className="bg-white">
@@ -57,13 +58,7 @@ export default function Dropdown({ value, onChangeHandler }: DropdownProps) {
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction
-                  onClick={() => {
-                    startTransition(handlerAddCategory);
-                  }}
-                >
-                  Add
-                </AlertDialogAction>
+                <AlertDialogAction onClick={() => startTransition(handlerAddCategory)}>Add</AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
