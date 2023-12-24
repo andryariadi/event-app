@@ -16,22 +16,22 @@ export default function Dropdown({ value, onChangeHandler }: DropdownProps) {
   const [newCategory, setNewCategory] = useState("");
 
   const handlerAddCategory = () => {
-    // createCategory({
-    //   categoryName: newCategory.trim(),
-    // }).then((category) => {
-    //   setCategories((prevState) => [...prevState, category]);
-    // });
+    createCategory({
+      categoryName: newCategory.trim(),
+    }).then((category) => {
+      setCategories((prevState) => [...prevState, category]);
+    });
   };
 
-  // useEffect(() => {
-  //   const getCategories = async () => {
-  //     const categoryList = await getAllCategories();
+  useEffect(() => {
+    const getCategories = async () => {
+      const categoryList = await getAllCategories();
 
-  //     categoryList && setCategories(categoryList as ICategory[]);
-  //   };
+      categoryList && setCategories(categoryList as ICategory[]);
+    };
 
-  //   getCategories();
-  // }, []);
+    getCategories();
+  }, []);
 
   return (
     <>

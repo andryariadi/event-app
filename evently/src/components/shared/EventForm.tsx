@@ -32,8 +32,13 @@ export default function EventForm({ userId, type }: EventFormProps) {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof eventFormSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    const eventData = values;
+
+    let uploadedImageUrl = values.imageUrl;
+
+    if (files.length > 0) {
+      const uploadedImages = await uploadFiles(files, userId);
+    }
     console.log(values);
   }
 
