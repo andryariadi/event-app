@@ -1,3 +1,5 @@
+import Card from "./Card";
+
 type CollectionProps = {
   data: any[];
   emptyTitle: string;
@@ -13,7 +15,19 @@ export default function Collection({ data, emptyTitle, emptyStateSubtext, collec
   return (
     <>
       {data.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-5 xl:gap-10"></div>
+        <div className="flex flex-col items-center gap-10">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-5 xl:gap-10">
+            {data.map((event) => {
+              const hasOrderLink = collectionType === "Events_Organized";
+              const hidePrice = collectionType === "My_Tickets";
+              return (
+                <li key={event._id} className="flex justify-center">
+                  <Card />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       ) : (
         <div className="wrapper flex-center flex-col gap-3 w-full min-h-[200px] py-28 rounded-[14px] bg-grey-50 text-center">
           <h3 className="p-bold-20 md:h5-bold">{emptyTitle}</h3>
