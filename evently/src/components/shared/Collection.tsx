@@ -1,7 +1,8 @@
+import { IEvent } from "@/lib/database/models/event.model";
 import Card from "./Card";
 
 type CollectionProps = {
-  data: any[];
+  data: IEvent[];
   emptyTitle: string;
   emptyStateSubtext: string;
   collectionType?: "All_Events" | "Events_Organized" | "My_Tickets";
@@ -22,7 +23,7 @@ export default function Collection({ data, emptyTitle, emptyStateSubtext, collec
               const hidePrice = collectionType === "My_Tickets";
               return (
                 <li key={event._id} className="flex justify-center">
-                  <Card />
+                  <Card event={event} hasOredrLink={hasOrderLink} hidePrice={hidePrice} />
                 </li>
               );
             })}
