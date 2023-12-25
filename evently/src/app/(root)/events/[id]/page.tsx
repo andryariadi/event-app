@@ -11,9 +11,9 @@ export default async function EventDetailPage({ params: { id } }: SearchParamPro
   return (
     <>
       <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-center bg-contain py-5 md:py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl md:flex-center gap-x-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl md:flex-center gap-20">
           <Image src={event.imageUrl} alt="event" width={500} height={500} className="h-full min-h[300px] object-cover object-center" />
-          <div className="flex flex-col w-full gap-8 p-5 md:p-10">
+          <div className="flex flex-col w-full gap-8">
             <div className="flex flex-col gap-6">
               <h2 className="h2-bold">{event.title}</h2>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -32,10 +32,11 @@ export default async function EventDetailPage({ params: { id } }: SearchParamPro
             <div className="flex flex-col gap-5">
               <div className="flex gap-2 md:gap-3">
                 <Image src="/assets/icons/calendar.svg" alt="calendar" width={32} height={32} />
-                <div className="flex flex-wrap items-center gap-y-1 p-medium-16 lg:p-regular-20">
+                <div className="flex flex-wrap items-center gap-1 p-medium-16 lg:p-regular-20">
                   <p>
                     {formatDateTime(event.startDateTime).dateOnly} - {formatDateTime(event.startDateTime).timeOnly}
                   </p>
+                  -
                   <p>
                     {formatDateTime(event.endDateTime).dateOnly} - {formatDateTime(event.endDateTime).timeOnly}
                   </p>
