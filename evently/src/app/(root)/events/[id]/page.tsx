@@ -1,12 +1,20 @@
-import { getEventById } from "@/lib/actions/event.action";
+import Collection from "@/components/shared/Collection";
+import { getEventById, getRelatedEventsByCategory } from "@/lib/actions/event.action";
 import { formatDateTime } from "@/lib/utils";
 import { SearchParamProps } from "@/types";
 import Image from "next/image";
 
-export default async function EventDetailPage({ params: { id } }: SearchParamProps) {
+export default async function EventDetailPage({ params: { id }, searchParams }: SearchParamProps) {
   const event = await getEventById(id);
 
+  const relatedEvents = await getRelatedEventsByCategory({
+    categoryId: event.categoryId,
+    eventId: event._id,
+    page: searchParams.page as string,
+  });
+
   console.log(event, "<---didetailpage");
+  console.log(relatedEvents, "<---didetailpage");
 
   return (
     <>
@@ -54,6 +62,11 @@ export default async function EventDetailPage({ params: { id } }: SearchParamPro
             </div>
           </div>
         </div>
+      </section>
+      {/* Events from same category */}
+      <section className="wrapper flex flex-col my-8 gap-8 md:gap-12">
+        <h2 className="h2-bold">Related Events</h2>
+        <Collection data={relatedEvents?.data} emptyTitle="Sorry, we could not find any events" emptyStateSubtext="Come back latter" collectionType="All_Events" limit={6} page={1} totalPages={2} />
       </section>
     </>
   );
