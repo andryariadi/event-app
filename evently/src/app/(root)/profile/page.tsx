@@ -10,6 +10,7 @@ export default async function ProfilePage() {
 
   const organizedEvent = await getEventsByUser({ userId, page: 1 });
 
+  console.log(userId, "<-----userIdprofile");
   return (
     <>
       {/* My Ticket */}
