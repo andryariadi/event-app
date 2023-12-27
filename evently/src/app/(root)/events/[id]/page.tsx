@@ -8,7 +8,7 @@ export default async function EventDetailPage({ params: { id }, searchParams }: 
   const event = await getEventById(id);
 
   const relatedEvents = await getRelatedEventsByCategory({
-    categoryId: event.categoryId,
+    categoryId: event.category._id,
     eventId: event._id,
     page: searchParams.page as string,
   });
