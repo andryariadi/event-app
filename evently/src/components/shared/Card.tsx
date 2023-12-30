@@ -16,6 +16,7 @@ export default function Card({ event, hasOredrLink, hidePrice }: CardProps) {
   const userId = sessionClaims?.userId as string;
 
   const isEventCreator = userId === event.organizer._id.toString();
+
   return (
     <>
       <div className="group relative flex flex-col min-h-[380px] md:min-h-[438px] w-full max-w-[400px] rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300">
