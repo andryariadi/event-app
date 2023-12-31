@@ -1,3 +1,4 @@
+import CategoryFilter from "@/components/shared/CategoryFilter";
 import Collection from "@/components/shared/Collection";
 import Search from "@/components/shared/Search";
 import { Button } from "@/components/ui/button";
@@ -45,7 +46,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
         </div>
         <div className="flex flex-col gap-5">
           <Search />
-          <div>CategoryFilter</div>
+          <CategoryFilter />
         </div>
         <Collection data={events?.data} emptyTitle="Sorry, we could not find any events" emptyStateSubtext="Come back latter" collectionType="All_Events" limit={6} page={1} totalPages={2} />
       </section>
