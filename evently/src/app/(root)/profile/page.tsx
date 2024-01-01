@@ -26,7 +26,7 @@ export default async function ProfilePage({ searchParams }: SearchParamProps) {
       {/* My Ticket */}
       <section className="bg-primary-50 bg-dotted-pattern bg-center bg-cover py-5 md:py-10">
         <div className="wrapper flex items-center justify-center md:justify-between">
-          <h3 className="h3-bold text-center md:text-left">My Ticket</h3>
+          <h3 className="h3-bold text-center md:text-left bg-gradient-to-r from-blue-500 to-rose-500 bg-clip-text text-transparent">My Ticket</h3>
           <Button asChild size="lg" className="button hidden sm:flex">
             <Link href="/#events">Explore More Events</Link>
           </Button>
@@ -49,7 +49,7 @@ export default async function ProfilePage({ searchParams }: SearchParamProps) {
       {/* Events  Organized */}
       <section className="bg-primary-50 bg-dotted-pattern bg-center bg-cover py-5 md:py-10">
         <div className="wrapper flex items-center justify-center md:justify-between">
-          <h3 className="h3-bold text-center md:text-left">Events Organized</h3>
+          <h3 className="h3-bold text-center md:text-left bg-gradient-to-r from-blue-500 to-rose-500 bg-clip-text text-transparent">Events Organized</h3>
           <Button asChild size="lg" className="button hidden sm:flex">
             <Link href="/events/create">Create New Event</Link>
           </Button>

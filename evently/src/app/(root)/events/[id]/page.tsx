@@ -68,7 +68,7 @@ export default async function EventDetailPage({ params: { id }, searchParams }: 
       </section>
       {/* Events from same category */}
       <section className="wrapper flex flex-col my-8 gap-8 md:gap-12">
-        <h2 className="h2-bold">Related Events</h2>
+        <h2 className="h2-bold bg-gradient-to-r from-blue-500 to-rose-500 bg-clip-text text-transparent">Related Events</h2>
         <Collection
           data={relatedEvents?.data}
           emptyTitle="Sorry, we could not find any events"
