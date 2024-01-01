@@ -44,11 +44,11 @@ export default async function Home({ searchParams }: SearchParamProps) {
             Trust by <br /> Thousands of Events
           </h2>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col md:flex-row gap-5 w-full">
           <Search />
           <CategoryFilter />
         </div>
-        <Collection data={events?.data} emptyTitle="Sorry, we could not find any events" emptyStateSubtext="Come back latter" collectionType="All_Events" limit={6} page={1} totalPages={2} />
+        <Collection data={events?.data} emptyTitle="Sorry, we could not find any events" emptyStateSubtext="Come back latter" collectionType="All_Events" limit={6} page={page} totalPages={events?.totalPages} />
       </section>
     </>
   );
