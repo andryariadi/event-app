@@ -39,10 +39,9 @@ export default async function Home({ searchParams }: SearchParamProps) {
       </section>
 
       <section id="events" className="wrapper my-8 gap-8 md:gap-12 flex flex-col">
-        <div data-aos="zoom-in-up" data-aos-duration="1000">
-          <h2 className="h2-bold">
-            Trust by <br /> Thousands of Events
-          </h2>
+        <div className="text-center" data-aos="zoom-in-up" data-aos-duration="1000">
+          <h2 className="h2-bold">Trust by</h2>
+          <h2 className="h2-bold">Thousands of Events</h2>
         </div>
         <div className="flex flex-col md:flex-row gap-5 w-full">
           <div className="w-full" data-aos="fade-up-right" data-aos-duration="1000">

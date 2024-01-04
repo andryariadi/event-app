@@ -20,7 +20,9 @@ export default async function UpdateEventPage({ params: { id } }: UpdateEventPro
   return (
     <>
       <section className="bg-primary-50 bg-dotted-pattern bg-center bg-cover py-5 md:py-10">
-        <h3 className="wrapper h3-bold text-center sm:text-left bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">Update Event</h3>
+        <h3 className="wrapper h3-bold text-center sm:text-left bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent" data-aos="fade-right" data-aos-duration="1000">
+          Update Event
+        </h3>
       </section>
       <div className="wrapper my-8 bg-white">
         <EventForm userId={userId} type="Update" event={event} eventId={event._id} />

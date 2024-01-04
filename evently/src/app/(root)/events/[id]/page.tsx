@@ -21,10 +21,12 @@ export default async function EventDetailPage({ params: { id }, searchParams }: 
     <>
       <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-center bg-contain py-5 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl md:flex-center gap-20">
-          <Image src={event.imageUrl} alt="event" width={500} height={500} className="h-full min-h[300px] object-cover object-center" />
-          <div className="flex flex-col w-full gap-8">
+          <div className="w-full" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+            <Image src={event.imageUrl} alt="event" width={500} height={500} className="h-full min-h[300px] object-cover object-center" />
+          </div>
+          <div className="flex flex-col w-full gap-8" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
             <div className="flex flex-col gap-6">
-              <h2 className="h2-bold">{event.title}</h2>
+              <h2 className="h3-bold">{event.title}</h2>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <div className="flex gap-3">
                   <p className="p-bold-20 rounded-full bg-green-500/10 py-2 px-5 text-green-700">{event.isFree ? "Free" : `$${event.price}`}</p>
@@ -68,16 +70,20 @@ export default async function EventDetailPage({ params: { id }, searchParams }: 
       </section>
       {/* Events from same category */}
       <section className="wrapper flex flex-col my-8 gap-8 md:gap-12">
-        <h2 className="h2-bold bg-gradient-to-r from-blue-500 to-rose-500 bg-clip-text text-transparent">Related Events</h2>
-        <Collection
-          data={relatedEvents?.data}
-          emptyTitle="Sorry, we could not find any events"
-          emptyStateSubtext="Come back latter"
-          collectionType="All_Events"
-          limit={3}
-          page={searchParams?.page as string}
-          totalPages={relatedEvents?.totalPages}
-        />
+        <h2 className="h2-bold bg-gradient-to-r from-blue-500 to-rose-500 bg-clip-text text-transparent" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+          Related Events
+        </h2>
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
+          <Collection
+            data={relatedEvents?.data}
+            emptyTitle="Sorry, we could not find any events"
+            emptyStateSubtext="Come back latter"
+            collectionType="All_Events"
+            limit={3}
+            page={searchParams?.page as string}
+            totalPages={relatedEvents?.totalPages}
+          />
+        </div>
       </section>
     </>
   );
