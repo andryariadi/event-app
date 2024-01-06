@@ -24,8 +24,8 @@ export default async function Home({ searchParams }: SearchParamProps) {
   return (
     <>
       <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
-        <div className="wrapper grid grid-cols-1 md:grid-cols-2 gap-5 2xl:gap-0">
-          <div className="flex flex-col justify-center gap-8" data-aos="fade-right" data-aos-duration="1000">
+        <div className="wrapper grid grid-cols-1 md:grid-cols-2 gap-5 2xl:gap-0 ">
+          <div className="flex flex-col justify-center gap-8 " data-aos="fade-right" data-aos-duration="1000">
             <h1 className="h1-bold bg-gradient-to-r from-blue-500 to-rose-500 bg-clip-text text-transparent">Host, Connect, Celebrate : Your Events, Our Platform!</h1>
             <p className="p-regular-20 md:p-regular-24">Book and learn helpful tips from 3,168+ mentors in world-class companies with our global community.</p>
             <Button size="lg" asChild className="button w-full sm:w-fit">
@@ -33,7 +33,8 @@ export default async function Home({ searchParams }: SearchParamProps) {
             </Button>
           </div>
           <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-            <Image src="/assets/images/hero.png" alt="hero" width={1000} height={1000} className="object-contain object-center max-h-[50vh] 2xl:max-h-[70vh]" />
+            <Image src="/assets/images/metaverso.svg" alt="hero" width={1000} height={1000} className="object-contain object-center max-h-[50vh] 2xl:max-h-[70vh] ml-20" />
+            {/* <div>Andry Ariadi</div> */}
           </div>
         </div>
       </section>
