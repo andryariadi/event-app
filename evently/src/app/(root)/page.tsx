@@ -34,7 +34,6 @@ export default async function Home({ searchParams }: SearchParamProps) {
           </div>
           <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
             <Image src="/assets/images/metaverso.svg" alt="hero" width={1000} height={1000} className="object-contain object-center max-h-[50vh] 2xl:max-h-[70vh] ml-20" />
-            {/* <div>Andry Ariadi</div> */}
           </div>
         </div>
       </section>

@@ -31,7 +31,7 @@ export default function Checkout({ event, userId }: { event: IEvent; userId: str
 
   return (
     <>
-      <form action={onCheckout} method="post">
+      <form action={onCheckout} method="POST">
         <Button type="submit" role="link" size="lg" className="button sm:w-fit">
           {event.isFree ? "Get Tickets" : "Buy Tickets"}
         </Button>
